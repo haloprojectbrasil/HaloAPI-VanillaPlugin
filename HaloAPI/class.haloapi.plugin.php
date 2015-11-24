@@ -1,13 +1,10 @@
-<?php
+<?php if (!defined('APPLICATION')) exit();
 /**
- * Gravatar Plugin.
+ * HaloAPI Plugin.
  *
- * @copyright 2009-2015 Vanilla Forums Inc.
  * @license https://www.gnu.org/licenses/lgpl.html GNU LGPL v3
  * @package HaloAPI
  */
-
-// Define the plugin:
 $PluginInfo['HaloAPI'] = array(
     'Name' => 'HaloAPI',
     'Description' => 'Implements the Halo Public API among the Vanilla forum system.',
@@ -15,17 +12,16 @@ $PluginInfo['HaloAPI'] = array(
     'Author' => "Germano Corrêa",
     'AuthorEmail' => 'germanobruscato@gmail.com',
     'AuthorUrl' => 'http://sculy.neocities.org',
-    'MobileFriendly' => true
+    'MobileFriendly' => true,
+    'SettingsUrl' => '/settings/haloapi',
+    'SettingsPermission' => 'Garden.Settings.Manage',
+    'RequiredApplications' => array('Vanilla' => '2.2'),
+    'SettingsPermission' => 'Garden.AdminUser.Only',
 );
-
-/**
- * Class HaloAPI
- */
-require_once('haloapi.class.php');
+require_once('PHP-HaloAPI/haloapi.class.php');
 class HaloAPI extends Gdn_Plugin {
-    /**
-     *
-     *
-     * @param $apiKey
-     */
+    private $apiKey;
+    private $haloAPI; // PHP-HaloAPI class object
+    private $playerName;
+    public function __construct(){}
 }

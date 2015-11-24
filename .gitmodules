@@ -1,0 +1,3 @@
+[submodule "HaloAPI/PHP-HaloAPI"]
+	path = HaloAPI/PHP-HaloAPI
+	url = git@github.com:haloprojectbrasil/PHP-HaloAPI.git
